@@ -1,12 +1,4 @@
 /* Estilos para el fondo de la página */
-body {
-    background-image: url('../imagenes/fondo2.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed; /* Mantiene el fondo fijo mientras el contenido se desplaza */
-    color: white;
-}
 
 .typewriter {
     font-family: "Almarai", sans-serif;

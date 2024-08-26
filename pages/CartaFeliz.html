@@ -24,57 +24,75 @@
         <!-- Archivo CSS personalizado -->
         <link rel="stylesheet" href="../css/styles.css">
         <style>
-        /* Estilo general para el contenedor */
-        .container {
-            position: relative; /* Posiciona el contenedor de forma relativa para que los elementos absolutamente posicionados estén basados en él */
-            padding: 20px;
-        }
 
-        /* Estilo para las imágenes en las esquinas */
+body {
+        background-image: url('../imagenes/fondo2.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed; /* Mantiene el fondo fijo mientras el contenido se desplaza */
+        color: white;
+    }
+
+    /* Estilo general para el contenedor */
+    .container {
+        position: relative; /* Posiciona el contenedor de forma relativa para que los elementos absolutamente posicionados estén basados en él */
+        padding: 20px;
+    }
+
+    /* Estilo para las imágenes en las esquinas */
+    .corner-image {
+        position: absolute;
+        width: 120px; /* Ajusta el tamaño de las imágenes */
+        height: auto;
+        border-radius: 35%;
+        z-index: 10; /* Asegura que las imágenes estén por encima de otros contenidos */
+    }
+
+    .top-left {
+        top: 20px; /* Ajusta el desplazamiento desde la parte superior */
+        left: 20px; /* Ajusta el desplazamiento desde la parte izquierda */
+    }
+
+    .top-right {
+        top: 20px; /* Ajusta el desplazamiento desde la parte superior */
+        right: 20px; /* Ajusta el desplazamiento desde la parte derecha */
+    }
+
+    /* Media Queries para dispositivos móviles */
+    @media (max-width: 768px) {
         .corner-image {
-            position: absolute;
-            width: 120px; /* Ajusta el tamaño de las imágenes */
-            height: auto;
-            border-radius: 35%;
-            z-index: 10; /* Asegura que las imágenes estén por encima de otros contenidos */
+            width: 80px; /* Ajusta el tamaño de las imágenes en pantallas más pequeñas */
         }
 
         .top-left {
-            top: 20px; /* Ajusta el desplazamiento desde la parte superior */
-            left: 20px; /* Ajusta el desplazamiento desde la parte izquierda */
+            top: 10px; /* Ajusta el desplazamiento en pantallas más pequeñas */
+            left: 10px; /* Ajusta el desplazamiento en pantallas más pequeñas */
         }
 
         .top-right {
-            top: 20px; /* Ajusta el desplazamiento desde la parte superior */
-            right: 20px; /* Ajusta el desplazamiento desde la parte derecha */
+            top: 10px; /* Ajusta el desplazamiento en pantallas más pequeñas */
+            right: 10px; /* Ajusta el desplazamiento en pantallas más pequeñas */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .corner-image {
+            width: 60px; /* Ajusta el tamaño de las imágenes en pantallas muy pequeñas */
         }
 
-        /* Media Queries para dispositivos móviles */
-        @media (max-width: 768px) {
-            .corner-image {
-                width: 80px; /* Ajusta el tamaño de las imágenes en pantallas más pequeñas */
-            }
-
-            .top-left, .top-right {
-                top: 10px; /* Ajusta el desplazamiento en pantallas más pequeñas */
-                left: 10px; /* Ajusta el desplazamiento en pantallas más pequeñas */
-                right: 10px; /* Ajusta el desplazamiento en pantallas más pequeñas */
-            }
+        .top-left {
+            top: 5px; /* Ajusta el desplazamiento en pantallas muy pequeñas */
+            left: 5px; /* Ajusta el desplazamiento en pantallas muy pequeñas */
         }
 
-        @media (max-width: 576px) {
-            .corner-image {
-                width: 60px; /* Ajusta el tamaño de las imágenes en pantallas muy pequeñas */
-            }
-
-            .top-left, .top-right {
-                top: 5px; /* Ajusta el desplazamiento en pantallas muy pequeñas */
-                left: 5px; /* Ajusta el desplazamiento en pantallas muy pequeñas */
-                right: 5px; /* Ajusta el desplazamiento en pantallas muy pequeñas */
-            }
+        .top-right {
+            top: 5px; /* Ajusta el desplazamiento en pantallas muy pequeñas */
+            right: 5px; /* Ajusta el desplazamiento en pantallas muy pequeñas */
         }
+    }
 
-        .carousel-inner img {
+    .carousel-inner img {
         width: 100%; /* Asegura que las imágenes ocupen el ancho completo del contenedor */
         height: auto; /* Mantiene la proporción de aspecto de las imágenes */
     }
