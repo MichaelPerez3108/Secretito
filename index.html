@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redireccionar</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const targetDate = new Date('2024-08-31T00:00:00');
+            const now = new Date();
+
+            if (now >= targetDate) {
+                // Redirige a la página de cumpleaños si la fecha actual es el 31 de agosto de 2024 o después
+                window.location.href = '/pages/CartaFeliz.html';
+            } else {
+                // Redirige a la página de cuenta regresiva si la fecha actual es antes del 31 de agosto de 2024
+                window.location.href = '/pages/espera.html';
+            }
+        });
+    </script>
+</head>
+<body>
+    <p>Redirigiendo...</p>
+</body>
+</html>

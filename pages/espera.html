@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cuenta Regresiva</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <style>
+        /* Estilo general para el cuerpo de la página */
+        body {
+            background-color: #000; /* Fondo negro */
+            font-family: 'Arial', sans-serif; /* Fuente general */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Ocupa toda la altura de la ventana */
+            color: #fff; /* Color de texto blanco */
+        }
+
+        /* Estilo para el contenedor del mensaje */
+        #message {
+            margin-bottom: 20px; /* Espacio entre el mensaje y el contador */
+            text-align: center; /* Centra el texto */
+        }
+
+        #message p {
+            font-size: 1.5rem; /* Tamaño de fuente para el mensaje */
+            color: #fff; /* Color blanco para el mensaje */
+            margin: 0; /* Sin margen */
+        }
+
+        /* Estilo para el contenedor del contador */
+        #countdown-container {
+            background: #222; /* Fondo del contenedor oscuro */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra para el contenedor */
+            padding: 20px; /* Espaciado interno */
+            text-align: center; /* Centra el texto */
+            max-width: 600px; /* Ancho máximo del contenedor */
+            width: 100%;
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+        }
+
+        /* Estilo para los elementos del contador */
+        #countdown {
+            display: flex;
+            justify-content: space-around; /* Espaciado uniforme entre los elementos */
+            align-items: center;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+        }
+
+        #countdown div {
+            text-align: center;
+            margin: 10px; /* Espacio alrededor de cada bloque */
+        }
+
+        #countdown p {
+            margin: 5px 0; /* Margen superior e inferior */
+            font-size: 2rem; /* Tamaño de fuente grande para números */
+            font-weight: bold; /* Fuente en negrita */
+            color: #ff69b4; /* Color rosado para los números */
+        }
+
+        #countdown span {
+            display: block;
+            font-size: 1rem; /* Tamaño de fuente más pequeño para las etiquetas */
+            color: #fff; /* Color blanco para las etiquetas */
+        }
+
+        /* Estilos responsivos */
+        @media (max-width: 768px) {
+            #countdown p {
+                font-size: 1.5rem; /* Tamaño de fuente más pequeño para pantallas más pequeñas */
+            }
+
+            #countdown span {
+                font-size: 0.9rem; /* Tamaño de fuente más pequeño para etiquetas en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            #countdown p {
+                font-size: 1.2rem; /* Tamaño de fuente aún más pequeño para dispositivos móviles muy pequeños */
+            }
+
+            #countdown span {
+                font-size: 0.8rem; /* Tamaño de fuente más pequeño para etiquetas en dispositivos móviles muy pequeños */
+            }
+
+            #countdown {
+                flex-direction: column; /* Cambia a una disposición vertical en pantallas muy pequeñas */
+            }
+        }
+        .contenedor_principal{
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+    </head>
+    <body>
+        <div class="contenedor_principal">
+            <div id="message">
+                <p>Aún no está disponible, vuelve pronto.</p>
+            </div>
+            <div id="countdown-container">
+                <div id="countdown">
+                    <div>
+                        <p id="days">0</p>
+                        <span>Días</span>
+                    </div>
+                    <div>
+                        <p id="hours">0</p>
+                        <span>Horas</span>
+                    </div>
+                    <div>
+                        <p id="minutes">0</p>
+                        <span>Minutos</span>
+                    </div>
+                    <div>
+                        <p id="seconds">0</p>
+                        <span>Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        function updateCountdown() {
+            const endDate = new Date('2024-08-31T00:00:00');
+            const now = new Date();
+            const timeDiff = endDate - now;
+
+            if (timeDiff <= 0) {
+                // Redirige a la página de cumpleaños si ya pasó la fecha
+                window.location.href = '/pages/CartaFeliz.html';
+                return;
+            }
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // Llama a la función inmediatamente para que se muestre la cuenta regresiva sin tener que esperar un segundo
+    </script>
+    </body>
+</html>

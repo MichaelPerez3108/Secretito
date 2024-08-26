@@ -1,0 +1,130 @@
+/* Estilos para el fondo de la página */
+body {
+    background-image: url('/imagenes/fondo2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantiene el fondo fijo mientras el contenido se desplaza */
+    color: white;
+}
+
+.typewriter {
+    font-family: "Almarai", sans-serif;
+    font-size: 18px;
+    white-space: pre-wrap;
+    overflow: hidden; /* Oculta el texto que aún no se ha "escrito" */
+    border-right: 2px solid; /* Cursor que simula el parpadeo */
+    animation: blink-cursor 0.8s step-end infinite; /* Efecto de parpadeo */
+}
+
+@keyframes blink-cursor {
+    from { border-right-color: rgba(255, 255, 255, 1); }
+    to { border-right-color: transparent; }
+}
+
+
+.animated-number{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Estilo para el número animado */
+.animated-number {
+    font-size: 100px;
+    font-weight: bold;
+    font-family: 'DM Serif Text', serif;
+    background: linear-gradient(270deg, #ff0000, #ff8800, #ffff00, #00ff00, #00ffff, #ff0000);
+    background-size: 1200% 1200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: colorChange 10s ease infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el número tanto vertical como horizontalmente */
+    text-align: center;
+    width: 100%;
+}
+
+/* Animación para crear el efecto de desvanecido entre colores */
+@keyframes colorChange {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.titulo{
+    font-family: 'DM Serif Text', serif;
+}
+.nombre{
+    font-family: "Caveat", cursive;
+}
+.marco {
+    width: 300px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    position: relative;
+}
+.marco-imagen {
+    width: 100%; /* Se ajusta al tamaño del contenedor */
+    height: auto;
+    display: block;
+}
+
+/* Estilo para el carrusel */
+#birthday-carousel img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+/* Estilo para el área de texto */
+.text-area {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    color: black;
+}
+
+/* Cambia el color del título del modal */
+.modal-title {
+    color: palevioletred;
+}
+
+/* Cambia el color del texto del cuerpo del modal */
+.modal-body p {
+    color: black;
+}
+
+/* Cambia el color de los botones */
+.modal-footer .btn-secondary {
+    color: #000000; /* Color del texto */
+    background-color: #cccccc; /* Color de fondo */
+    border-color: #bbbbbb; /* Color del borde */
+}
+
+.modal-footer .btn-primary {
+    color: #ffffff; /* Color del texto */
+    background-color: #007bff; /* Color de fondo */
+    border-color: #0069d9; /* Color del borde */
+}
+
+/* Cambia el color de la 'x' de cierre */
+.modal-header .btn-close {
+    color: #ffffff; /* Color del icono de cierre */
+}
+
+#modalCloseBtn {
+    transition: all 0.5s ease; /* Animación suave para el cambio de posición */
+    z-index: 1050; /* Asegura que el botón esté por encima del contenido del modal */
+}
