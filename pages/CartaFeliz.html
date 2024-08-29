@@ -114,6 +114,17 @@ body {
     </head>
 
     <body>
+        <audio id="miAudio" src="../music/cancioncita.mp3" autoplay
+        ></audio>
+
+        <script>
+            // Selecciona el elemento de audio
+            var audio = document.getElementById('miAudio');
+        
+            // Controla el volumen (0 es silenciado, 1 es el volumen completo)
+            audio.volume = 0.3; // Cambia 0.5 por el valor que desees (de 0 a 1)
+        </script>
+        
         <div class="container text-center">
             <!-- Imágenes en las esquinas -->
             <img src="../imagenes/princesita1.avif" alt="Corner Image 1"
@@ -127,7 +138,7 @@ body {
                     <img src="../imagenes/marco.png" alt
                         class="img-fluid marco-imagen">
                     <div class="animated-number position-absolute">
-                        24
+                        20
                     </div>
                 </div>
             </div>
@@ -282,12 +293,14 @@ body {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">¡Sorpresa!</h5>
+                        <h5 class="modal-title">¡Sorpresita!</h5>
                         <button type="button" class="btn-close"
                             data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <p>¡Espero que te guste este pequeño detalle!</p>
+                        <p>🥰😍 ¡Espero que te guste este pequeñito detalle!🥰😍
+                        </p>
+                        <h1 class="titulito">🙄🥰¿Me amas? uhuhuh🙄🥰</h1>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary"

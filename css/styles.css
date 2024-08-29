@@ -13,6 +13,9 @@
     from { border-right-color: rgba(255, 255, 255, 1); }
     to { border-right-color: transparent; }
 }
+.titulito{
+    color: black;
+}
 
 
 .animated-number{
@@ -59,9 +62,11 @@
 }
 .titulo{
     font-family: 'DM Serif Text', serif;
+    color: white;
 }
 .nombre{
     font-family: "Caveat", cursive;
+    color: white;
 }
 .marco {
     width: 300px; /* Ajusta el tamaño según sea necesario */
